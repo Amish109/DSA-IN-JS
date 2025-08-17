@@ -5,6 +5,8 @@
  * 
  */
 
+// Kadane’s Algorithm
+
 const calculateHighrdtConsecutiveSubArraySum = (data)=>{
     // initial state
     let max_sum = data[0];
