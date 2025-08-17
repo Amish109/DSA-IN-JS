@@ -7,6 +7,10 @@
 
 // Kadane’s Algorithm
 
+// ================== Important ==================
+// if the ouverall current sum goes - we will skip it as if we add that sub array with any other it will just reduce it 
+
+
 const calculateHighrdtConsecutiveSubArraySum = (data)=>{
     // initial state
     let max_sum = data[0];

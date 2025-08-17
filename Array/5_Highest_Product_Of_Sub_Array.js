@@ -25,6 +25,10 @@ const maxProductSubArray = (data) =>{
             max_product = current_product;
         }
     }
+// Left and right is important because here it will go as [2,-3,4] in this example if we just go by left then the product will :- 
+// - be 2(max) --> -6(2*-3) --> -24(-6*4),
+// - but if we go right to left too then 4(max) --> -12(4*-3) --> -24(-12*2) ,
+// so 4 > 2 so max will be 4
     current_product = 1;
     for(let i=data.length -1; i>=0; i--){
         console.log("current_product",current_product)
