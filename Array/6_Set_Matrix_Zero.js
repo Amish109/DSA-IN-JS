@@ -101,7 +101,8 @@ const convertMatrixInZero = (array_data)=>{
 // 	}
 // 	return array_data;
 // }
-const input = [[1,1,1],[1,0,1],[1,1,1]];
+// const input = [[1,1,1],[1,0,1],[1,1,1]];
+const input = [[0,1,2,0],[3,4,5,2],[1,3,1,5]];
 console.log(`input and output is `,input,convertMatrixInZero(JSON.parse(JSON.stringify(input))));
 
 
