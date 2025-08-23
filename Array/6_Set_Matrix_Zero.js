@@ -37,11 +37,13 @@ const convertMatrixInZero = (array_data)=>{
 	for(let i = 0 ; i<m ;i++){
 		if(array_data[i][0]==0){
 			first_col_zero = true;
+			break;
 		}
 	}
 	for(let j = 0 ; j<n ;j++){
 		if(array_data[0][j]==0){
 			first_row_zero = true;
+			break;
 		}
 	}
 
