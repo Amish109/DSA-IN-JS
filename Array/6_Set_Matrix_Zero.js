@@ -22,7 +22,14 @@
 
 
 const convertMatrixInZero = (array_data)=>{
+/*
+- What are we doing here
 
+- In this method , we iterating from row 1 and col 1 , and if we see 0 then we make the 0th item of row and 0th item of col as 0
+- and we are storing a flog if 0th row and 0th col has 0 ,  so tht we know if the og array has 0th row/col has 0 or we have updated it
+- then we make whole ro and col where ever were seeing 0 on 0th row or col
+- then if the first row has zero variable is 0 then we make whole row 0 and if 1st col variable is true then we make whole first col as 0 too
+*/
 	let first_row_zero = false;
 	let first_col_zero = false;
 	let m = array_data.length;
