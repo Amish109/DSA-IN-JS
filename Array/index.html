@@ -7,6 +7,62 @@
 </head>
 <body>
 	Test
-	<script src="./6_Set_Matrix_Zero.js"></script>
+	<!-- <script src="./6_Set_Matrix_Zero.js"></script> -->
+	 <script>
+		let data_in_block = [];
+		data = [["5","3",".",".","7",".",".",".","."]
+									,["6",".",".","1","9","5",".",".","."]
+									,[".","9","8",".",".",".",".","6","."]
+									,["8",".",".",".","6",".",".",".","3"]
+									,["4",".",".","8",".","3",".",".","1"]
+									,["7",".",".",".","2",".",".",".","6"]
+									,[".","6",".",".",".",".","2","8","."]
+									,[".",".",".","4","1","9",".",".","5"]
+									,[".",".",".",".","8",".",".","7","9"]];
+for(let i=0;i<9;i++){
+	if(i%3==0){
+		data_in_block.push([]);
+		data_in_block.push([]);
+		data_in_block.push([]);
+	}
+	for(let j=0;j<9;j++){
+		let start = data_in_block.length-3;
+		let floor = Math.floor(j/3);
+		let index = start + floor;
+		data_in_block[index].push(data[i][j]);
+	}
+}
+ console.log('data_in_block',data_in_block);
+
+	 </script>
+	 <script>
+
+		// data = [["5","3",".",".","7",".",".",".","."]
+		// 					 ,["6",".",".","1","9","5",".",".","."]
+		// 					 ,[".","9","8",".",".",".",".","6","."]
+		// 					 ,["8",".",".",".","6",".",".",".","3"]
+		// 					 ,["4",".",".","8",".","3",".",".","1"]
+		// 					 ,["7",".",".",".","2",".",".",".","6"]
+		// 					 ,[".","6",".",".",".",".","2","8","."]
+		// 					 ,[".",".",".","4","1","9",".",".","5"]
+		// 					 ,[".",".",".",".","8",".",".","7","9"]];
+		// let arr_of_rows =[
+
+		// 	];
+// for(let i =0;i<=6;i=i+3){ //0,3,6 --> new array of 3
+// 	arr_of_rows.push([])
+// 	arr_of_rows.push([])
+// 	arr_of_rows.push([])
+// 	for(let j =i;j<=i+2;j++){ // 0,1,2 --> pushing array
+// 		for(let k =0;k<data[i].length;k++){
+// 			let start = arr_of_rows.length -3;
+// 			let num = Math.floor(k/3);
+// 			let index = num+start;
+// 			arr_of_rows[index].push(data[j][k]);	
+// 		}
+// 	}
+// }
+		// 	console.log('arr_of_rows',arr_of_rows);
+	 </script>
 </body>
 </html>
