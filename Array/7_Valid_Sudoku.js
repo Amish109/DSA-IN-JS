@@ -26,8 +26,52 @@ const test_data = [["5","3",".",".","7",".",".",".","."]
 									,[".",".",".",".","8",".",".","7","9"]];
 
 
-
 const isValidSudoku = (data)=>{
+	// Approach will reate a array of sets for rows,ccol,grid
+	// and will see if a number exists for a particular row col or grid
+	const row_set =  []; // Will have 9 aray of sets
+	const col_set =  []; // Will have 9 aray of sets
+	const grid_set = []; // Will have 9 aray of sets
+	for(let i=0;i<9;i++){
+		row_set.push(new Set());
+		col_set.push(new Set());
+		grid_set.push(new Set());
+	}
+	for(let row=0;row<data?.length;row++){
+		for(let col=0;col<data[row]?.length;col++){
+			if(data[row][col] =='.'){
+				continue;
+			}
+			let grid_no = Math.floor(row/3)*3 + Math.floor(col/3);
+			let exists_in_row = row_set[row].has(data[row][col]);
+			let exists_in_col = col_set[col].has(data[row][col]);
+			let exists_in_grid = grid_set[grid_no].has(data[row][col]);
+			if(exists_in_col || exists_in_row || exists_in_grid){
+				return false;
+			}
+			row_set[row].add(data[row][col]);
+			col_set[col].add(data[row][col]);
+			grid_set[grid_no].add(data[row][col]);
+		}
+	}
+	return true;
+}
+
+
+console.log(
+	isValidSudoku(test_data)
+)
+
+
+
+const isValidSudoku_my_approach = (data)=>{
+	// Approach :- will first check row wise and then 
+	// will iterate array one by one and then split each array into 3:- 
+	// 0,1,2(Math.floor(col/3) is in this range) :- indexed goes on 1st array
+	// 3,4,5(Math.floor(col/3) is in this range) :- indexed goes on 2nd array
+	// 6,7,8(Math.floor(col/3) is in this range) :- indexed goes on 3rd array
+
+	// and when row row%3 ==0 add new 3 empty arrays 
 let is_sudoku_valid = true;
 
 for(let row=0; row<data.length && is_sudoku_valid == true; row++){
