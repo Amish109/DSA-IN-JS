@@ -9,30 +9,64 @@
 	Test
 	<!-- <script src="./6_Set_Matrix_Zero.js"></script> -->
 	 <script>
-		let data_in_block = [];
-		data = [["5","3",".",".","7",".",".",".","."]
-									,["6",".",".","1","9","5",".",".","."]
-									,[".","9","8",".",".",".",".","6","."]
-									,["8",".",".",".","6",".",".",".","3"]
-									,["4",".",".","8",".","3",".",".","1"]
-									,["7",".",".",".","2",".",".",".","6"]
-									,[".","6",".",".",".",".","2","8","."]
-									,[".",".",".","4","1","9",".",".","5"]
-									,[".",".",".",".","8",".",".","7","9"]];
-for(let i=0;i<9;i++){
-	if(i%3==0){
-		data_in_block.push([]);
-		data_in_block.push([]);
-		data_in_block.push([]);
+
+		const input_data = [1,2,3,4,5,6,7];
+
+const rotateArray=(array_data,rotate_index=1)=>{
+	debugger;
+	const reverseArray=(array_input)=>{
+		if(array_input.length%2==0){
+			for(let x=0;x<array_input.length/2;i++){
+				let temp_value =  array_input[x];
+				array_input[x] = array_input[(array_input.length -1) - x];
+				array_input[(array_input.length -1) - x] = temp_value;
+			}
+		} else{
+			for(let x=0;x<Math.floor(array_input.length/2);x++){
+				let temp_value =  array_input[x];
+				array_input[x] = array_input[(array_input.length -1) - x];
+				array_input[(array_input.length -1) - x] = temp_value;
+			}
+		}
+		return array_input;
 	}
-	for(let j=0;j<9;j++){
-		let start = data_in_block.length-3;
-		let floor = Math.floor(j/3);
-		let index = start + floor;
-		data_in_block[index].push(data[i][j]);
+	array_data = reverseArray(array_data);
+	let temp_array =  [];
+	for(let i=0;i<rotate_index%array_data.length;i++){
+		temp_array.push(array_data[i]);
 	}
+	array_data = temp_array+array_data.slice(rotate_index);
+	return array_data;
 }
- console.log('data_in_block',data_in_block);
+
+
+console.log(rotateArray(input_data,2));
+	 </script>
+	 <script>
+// 		let data_in_block = [];
+// 		data = [["5","3",".",".","7",".",".",".","."]
+// 									,["6",".",".","1","9","5",".",".","."]
+// 									,[".","9","8",".",".",".",".","6","."]
+// 									,["8",".",".",".","6",".",".",".","3"]
+// 									,["4",".",".","8",".","3",".",".","1"]
+// 									,["7",".",".",".","2",".",".",".","6"]
+// 									,[".","6",".",".",".",".","2","8","."]
+// 									,[".",".",".","4","1","9",".",".","5"]
+// 									,[".",".",".",".","8",".",".","7","9"]];
+// for(let i=0;i<9;i++){
+// 	if(i%3==0){
+// 		data_in_block.push([]);
+// 		data_in_block.push([]);
+// 		data_in_block.push([]);
+// 	}
+// 	for(let j=0;j<9;j++){
+// 		let start = data_in_block.length-3;
+// 		let floor = Math.floor(j/3);
+// 		let index = start + floor;
+// 		data_in_block[index].push(data[i][j]);
+// 	}
+// }
+//  console.log('data_in_block',data_in_block);
 
 	 </script>
 	 <script>
