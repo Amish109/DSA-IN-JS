@@ -41,3 +41,17 @@ const calculateBestTimeToBuyAndSellStock=(data=array_data)=>{
 	}
 	return high;
 }
+// const calculateBestTimeToBuyAndSellStock=(data=array_data)=>{
+// 	let high = 0; 
+// 	for(let i=0; i<data.length; i++){
+// 		for(let j=i+1; j<data.length; j++){
+// 			if(data[j] - data[i] > high){
+// 				high = data[j] - data[i];
+// 			}
+// 		}	
+// 	}
+// 	return high;
+// }
+
+
+calculateBestTimeToBuyAndSellStock(array_data);
