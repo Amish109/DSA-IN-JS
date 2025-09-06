@@ -12,7 +12,9 @@ Determine if a 9x9 suduko board is valid  only  the filled cells need to be vali
 
 
 
-
+// const getGridNumber = (i,j)=>{
+//  return (Math.floor(i/3))*3 + (Math.floor(j/3))
+// }
 
 
 const test_data = [["5","3",".",".","7",".",".",".","."]
