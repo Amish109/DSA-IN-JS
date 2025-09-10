@@ -1,3 +1,9 @@
+// Just like bubble the big ones goes first then small one follows back
+
+// - so in this we will first make the highest number at the end and then the last item will be sorted ,  -then we will leave that alone and then will take the next highest num and make it at the end agaain o this way array will be sorted
+// basically if left side num is greater than right side we will swap and make greater number on right nd by doin this we will make the highest num reach end
+
+
 const numbers = [34, 12, 89, 45, 23, 7, 56, 91]; //length 8 0-->6,0,5
 
 function bubbleSort(data = numbers){
