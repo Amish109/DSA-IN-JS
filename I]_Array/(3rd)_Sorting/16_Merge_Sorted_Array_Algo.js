@@ -51,4 +51,7 @@ function merge(array1=[1, 3, 5],array2= [3,20, 40, 60, 80, 100]){
 // console.log(merge([0, 1, 2], [3, 4, 5]));
 // console.log(merge([1,2,3,4], [2]));
 // console.log(merge([-5, -1, 3], [-2, 4]));
-console.log(merge([0, 2, 4], []));
+// console.log(merge([0, 2, 4], []));
+module.exports={
+    merge:merge
+}
